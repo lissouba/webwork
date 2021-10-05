@@ -9,7 +9,7 @@
 <body>
   <form action="login.php" method="POST">
 Username</br>
-<input type="text" name="Username" placeholder="" value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["username"]; } ?>"><br>
+<input type="text" name="username" placeholder="" value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["username"]; } ?>"><br>
 Password</br>
 <input type="password" name="password" placeholder="" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>"><br>
  <input type="submit" name="signin" value="signup"><br><br>

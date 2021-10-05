@@ -6,15 +6,15 @@
   <title></title>
 
 </head>
-<body>
-  <form action="hey2.php" method="POST">
+<body style="text-align:center;background-color:gray">
+  <form action="login.php" method="POST">
 Username</br>
-<input type="text" name="user" placeholder="" value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["username"]; } ?>"><br>
+<input type="text" name="username" placeholder="" value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["username"]; } ?>"><br>
 Password</br>
-<input type="password" name="pass" placeholder="" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>"><br>
- <input type="submit" name="signin" value="signup"><br><br>
+<input type="password" name="password" placeholder="" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>"><br>
+ <input type="submit" name="signin" value="sigin"><br><br>
 <p><input type="checkbox" name="remember" /> Remember me</p>
- New here!<a href="signup1.php">Signup</a>
+ New here!<a href="signupform.php">Signup</a>
 
 </form>
 

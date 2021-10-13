@@ -1,26 +1,30 @@
 <?php
-
+session_start();
 include "database.php";
 $fname=$_POST['firstname'];
 $lname=$_POST['lastname'];
 $email=$_POST['email'];
 $user=$_POST['username'];
+$pass=$_POST['password'];
 
-
-$pass=sha1($_POST['password']);
-
-
-
-
-$sql="insert into user (Firstname,Lastname,email,username,password) values(?,?,?,?,?)";
-
+$_SESSION['email']=$email;
+    $_SESSION['code']=$code;
+$code= mt_rand(100000, 999999);
+$status="not verified";
+$sql="INSERT INTO user (Firstname, Lastname, email, username, password, code, status) values(?,?,?,?,?,?,?)";
 $st=mysqli_stmt_init($conn);
-if(mysqli_stmt_prepare($st,$sql))
-{
-	echo "YOUR ACCOUNT HAS CREATED SUCCESSFULY"."</br>";
-	echo '<a href="index.php">LOGIN</a>'; 
-	mysqli_stmt_bind_param($st,"sssss",$fname,$lname,$email,$user,$pass);
-	mysqli_stmt_execute($st);
+ $to=$email;
+    $from="From: niyonsabapascal1@gmail.com";
+    $subject="Verification Code for the site";
+    $message =$code;
+ 
+    $mailing = mail($to,$subject,$message,$from);
+if(mysqli_stmt_prepare($st,$sql)){
+	$salted="wertyuihhhh".$pass;
+	$pass=hash('sha1', $salted);
+header('location: code.php');
+mysqli_stmt_bind_param($st,"sssssss",$fname,$lname,$email,$user,$pass,$code,$status);
+    mysqli_stmt_execute($st);
 }
 else{
 

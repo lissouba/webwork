@@ -18,8 +18,8 @@
 </head>
 <body class="index">
 
-<form id="login" action="login.php" method="POST" >
-    <h1 id="ff-proof" class="ribbon">MY WEB PAGE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+<form id="login" action="Login.php" method="POST" >
+    <h1 id="ff-proof" class="ribbon">ACCOUNT NOT VERIFIED!! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
     <div class="apple">
       <div class="top"><span></span></div>
       <div class="butt"><span></span></div>
@@ -33,11 +33,12 @@
     <fieldset id="actions">
         <input type="submit" id="submit" value="Login"/>
        <p class="option"><input type="checkbox" name="remember" /> Remember me&nbsp;&nbsp;|
-        <a href="try.php">Signup</a></p>
+       <a href="email.php">verify now</a></p>
+      
       
     </fieldset>
 
 </form>
- <p style="text-align:center; font-size: 20px;"> <a href="forget.php">FORGOT</a></p>
+    
 </body>
 </html>
